@@ -1,23 +1,23 @@
+@use "sass:map";
 @import "../../globalStyles.module.scss";
-
 // underline consts
 $underline-thickness: 4px;
 $underline-spacing: 0.5rem;
 .landing-page__left {
   justify-content: space-between;
 }
+.landing-page__right {
+}
 .landing-page__container {
-  min-height: 90dvh;
   margin: 3rem 2rem;
   background-color: $landing-page-background;
   position: relative;
   animation: $fade-in-animation;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  // border: 2px solid $landing-page-background;
   padding: 1rem;
-
-  // box-shadow: 0 0 0 20px $main-background, 0 0 0 30px $landing-page-background;
+  @media (min-width: map.get($breakpoints,"desktop")) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .welcome-header {
