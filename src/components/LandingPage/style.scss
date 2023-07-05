@@ -1,4 +1,25 @@
 @import "../../globalStyles.module.scss";
+// animation consts
+$animation-time: 1.25s;
+$animation-time-func: ease-in-out;
+$tranlate-in-value: 20px;
+
+// animations
+$fade-in-animation: fade-in $animation-time $animation-time-func forwards;
+$translate-in-right-animation: translate-in-right $animation-time
+  $animation-time-func forwards;
+$translate-in-left-animation: translate-in-left $animation-time
+  $animation-time-func forwards;
+$fade-in-animation: fade-in $animation-time $animation-time-func forwards;
+@function underline-animate($animation-name) {
+  $text-animation: $animation-name $animation-time $animation-time-func forwards;
+
+  @return $text-animation, $fade-in-animation;
+}
+
+// underline consts
+$underline-thickness: 4px;
+$underline-spacing: 0.5rem;
 
 .landing-page_container {
   min-height: 90dvh;
@@ -13,62 +34,61 @@
 
   // box-shadow: 0 0 0 20px $main-background, 0 0 0 30px $landing-page-background;
 }
+
 .welcome-header {
-  $animation-time: 1.25s;
-  $animation-time-func: linear;
   color: $font-color;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 15ch;
+  span {
+    text-transform: uppercase;
+  }
   span:nth-of-type(1) {
-    background: linear-gradient(
-        to right,
-        $landing-page-background,
-        $landing-page-background
-      ),
-      linear-gradient(to right, $font-color, $font-color);
-    background-position: 100% 100%, 0 100%;
-    display: inline-block;
-    // width: fit-content;
-    background-repeat: no-repeat;
-    transition: background-size 400ms;
-    background-size: 100% 0.1em, 0 0.1em;
-    animation: underline $animation-time $animation-time-func infinite forwards,
-      fade-in $animation-time $animation-time-func infinite forwards;
-    animation-iteration-count: 1;
+    animation: $fade-in-animation, $translate-in-right-animation;
   }
-
   span:nth-of-type(2) {
-    background: linear-gradient(to right, $font-color, $font-color),
-      linear-gradient(
-        to right,
-        $landing-page-background,
-        $landing-page-background
-      );
-    background-position: 100% 100%, 0 100%;
-    display: inline-block;
-    // width: fit-content;
-    width: 100%;
-    background-repeat: no-repeat;
-    transition: background-size 400ms;
-    background-size: 100% 0.1em, 0 0.1em;
-
-    animation: underline $animation-time $animation-time-func infinite reverse,
-      fade-in $animation-time $animation-time-func infinite forwards;
-    animation-iteration-count: 1;
-  }
-
-  span:nth-of-type(2) {
+    animation: $fade-in-animation, $translate-in-left-animation;
     text-align: end;
     align-self: flex-end;
   }
 }
 @keyframes underline {
   0% {
-    background-size: 100% 0.1em, 0 0.1em;
+    transform: translateX(-100%);
+    // background-size: 100% 0.1em, 0 0.1em;
   }
   100% {
-    background-size: 0 0.1em, 100% 0.1em;
+    transform: translateX(0%);
+    // background-size: 0 0.1em, 100% 0.1em;
+  }
+}
+@keyframes underline-reverse {
+  0% {
+    transform: translateX(100%);
+    // background-size: 100% 0.1em, 0 0.1em;
+  }
+  100% {
+    transform: translateX(0%);
+    // background-size: 0 0.1em, 100% 0.1em;
+  }
+}
+@keyframes translate-in-right {
+  0% {
+    transform: translateX($tranlate-in-value);
+  }
+  100% {
+    transform: translateX(0%);
+    // background-size: 0 0.1em, 100% 0.1em;
+  }
+}
+@keyframes translate-in-left {
+  0% {
+    transform: translateX(-$tranlate-in-value);
+  }
+  100% {
+    transform: translateX(0%);
+    // background-size: 0 0.1em, 100% 0.1em;
   }
 }
 @keyframes fade-in {
@@ -78,4 +98,17 @@
   100% {
     opacity: 1;
   }
+}
+.underline {
+  height: $underline-thickness;
+  width: 100%;
+  margin: $underline-spacing 0;
+  background-color: $font-color;
+}
+
+.underline:not(.reverse) {
+  animation: underline-animate(underline);
+}
+.underline.reverse {
+  animation: underline-animate(underline-reverse);
 }
