@@ -16,11 +16,21 @@ const LandingPage = () => {
 const WelcomeText = () => {
   return (
     <h1 className="welcome-header">
-      <span>Welcome To</span>
-      <span>My Portfolio</span>
+      <UnderlineText>Welcome To</UnderlineText>
+      <UnderlineText reverse>My Portfolio</UnderlineText>
     </h1>
   );
 };
+interface Props {
+  children: string;
+  reverse?: boolean;
+}
+const UnderlineText = ({ children, reverse = false }: Props) => (
+  <>
+    <span>{children}</span>
+    <div className={`underline${reverse ? " reverse" : ""}`}></div>
+  </>
+);
 const AboutMeBlurb = () => {
   return <></>;
 };
