@@ -1,3 +1,81 @@
-section {
-  height: 100%;
+@import "../../globalStyles.module.scss";
+
+.landing-page_container {
+  min-height: 90dvh;
+  margin: 3rem 2rem;
+  background-color: $landing-page-background;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // border: 2px solid $landing-page-background;
+  padding: 1rem;
+
+  // box-shadow: 0 0 0 20px $main-background, 0 0 0 30px $landing-page-background;
+}
+.welcome-header {
+  $animation-time: 1.25s;
+  $animation-time-func: linear;
+  color: $font-color;
+  display: flex;
+  flex-direction: column;
+  width: 15ch;
+  span:nth-of-type(1) {
+    background: linear-gradient(
+        to right,
+        $landing-page-background,
+        $landing-page-background
+      ),
+      linear-gradient(to right, $font-color, $font-color);
+    background-position: 100% 100%, 0 100%;
+    display: inline-block;
+    // width: fit-content;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+    background-size: 100% 0.1em, 0 0.1em;
+    animation: underline $animation-time $animation-time-func infinite forwards,
+      fade-in $animation-time $animation-time-func infinite forwards;
+    animation-iteration-count: 1;
+  }
+
+  span:nth-of-type(2) {
+    background: linear-gradient(to right, $font-color, $font-color),
+      linear-gradient(
+        to right,
+        $landing-page-background,
+        $landing-page-background
+      );
+    background-position: 100% 100%, 0 100%;
+    display: inline-block;
+    // width: fit-content;
+    width: 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+    background-size: 100% 0.1em, 0 0.1em;
+
+    animation: underline $animation-time $animation-time-func infinite reverse,
+      fade-in $animation-time $animation-time-func infinite forwards;
+    animation-iteration-count: 1;
+  }
+
+  span:nth-of-type(2) {
+    text-align: end;
+    align-self: flex-end;
+  }
+}
+@keyframes underline {
+  0% {
+    background-size: 100% 0.1em, 0 0.1em;
+  }
+  100% {
+    background-size: 0 0.1em, 100% 0.1em;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
