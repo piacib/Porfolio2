@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import "./normalize.css";
 import LandingPage from "./components/LandingPage";
 import Projects from "./components/Projects";
