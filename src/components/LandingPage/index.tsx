@@ -1,8 +1,9 @@
+import AboutMeBlurb from "../AboutMeBlurb";
 import "./style.scss";
 const LandingPage = () => {
   return (
-    <section className="landing-page_container">
-      <div className="landing-page__left">
+    <section className="landing-page__container">
+      <div className="landing-page__left flex-col">
         <WelcomeText />
         <AboutMeBlurb />
         <Skills />
@@ -31,9 +32,7 @@ const UnderlineText = ({ children, reverse = false }: Props) => (
     <div className={`underline${reverse ? " reverse" : ""}`}></div>
   </>
 );
-const AboutMeBlurb = () => {
-  return <></>;
-};
+
 const Skills = () => {
   return <></>;
 };

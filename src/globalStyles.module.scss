@@ -9,3 +9,21 @@ $breakpoints: (
   tablet: 768px,
   desktop: 1024px,
 ) !default;
+
+// animation consts
+$animation-time: 1.25s;
+$animation-time-func: ease-in-out;
+$tranlate-in-value: 20px;
+
+// animations
+$fade-in-animation: fade-in $animation-time $animation-time-func forwards;
+$translate-in-right-animation: translate-in-right $animation-time
+  $animation-time-func forwards;
+$translate-in-left-animation: translate-in-left $animation-time
+  $animation-time-func forwards;
+$fade-in-animation: fade-in $animation-time $animation-time-func forwards;
+@function underline-animate($animation-name) {
+  $text-animation: $animation-name $animation-time $animation-time-func forwards;
+
+  @return $text-animation, $fade-in-animation;
+}

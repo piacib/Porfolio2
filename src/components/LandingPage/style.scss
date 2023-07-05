@@ -1,32 +1,17 @@
 @import "../../globalStyles.module.scss";
-// animation consts
-$animation-time: 1.25s;
-$animation-time-func: ease-in-out;
-$tranlate-in-value: 20px;
-
-// animations
-$fade-in-animation: fade-in $animation-time $animation-time-func forwards;
-$translate-in-right-animation: translate-in-right $animation-time
-  $animation-time-func forwards;
-$translate-in-left-animation: translate-in-left $animation-time
-  $animation-time-func forwards;
-$fade-in-animation: fade-in $animation-time $animation-time-func forwards;
-@function underline-animate($animation-name) {
-  $text-animation: $animation-name $animation-time $animation-time-func forwards;
-
-  @return $text-animation, $fade-in-animation;
-}
 
 // underline consts
 $underline-thickness: 4px;
 $underline-spacing: 0.5rem;
-
-.landing-page_container {
+.landing-page__left {
+  justify-content: space-between;
+}
+.landing-page__container {
   min-height: 90dvh;
   margin: 3rem 2rem;
   background-color: $landing-page-background;
   position: relative;
-
+  animation: $fade-in-animation;
   display: grid;
   grid-template-columns: 1fr 1fr;
   // border: 2px solid $landing-page-background;
