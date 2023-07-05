@@ -7,7 +7,7 @@ function App() {
     <>
       <LandingPage />
 
-      <Projects />
+      {/* <Projects /> */}
     </>
   );
 }

@@ -1,0 +1,28 @@
+@import "../../globalStyles.module.scss";
+
+.circle {
+  border-radius: 50%;
+}
+.profile-image {
+  width: 5rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  animation: $translate-in-right-animation;
+  filter: grayscale(100%);
+}
+.about-me-blurb__container {
+  align-self: flex-end;
+}
+
+.about-me-blurb {
+  animation: $translate-in-left-animation;
+}
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 70%;
+  align-items: center;
+  animation: $translate-in-right-animation;
+  justify-content: space-between;
+}

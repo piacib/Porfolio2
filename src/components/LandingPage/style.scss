@@ -1,3 +1,99 @@
-section {
-  height: 100%;
+@import "../../globalStyles.module.scss";
+
+// underline consts
+$underline-thickness: 4px;
+$underline-spacing: 0.5rem;
+.landing-page__left {
+  justify-content: space-between;
+}
+.landing-page__container {
+  min-height: 90dvh;
+  margin: 3rem 2rem;
+  background-color: $landing-page-background;
+  position: relative;
+  animation: $fade-in-animation;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // border: 2px solid $landing-page-background;
+  padding: 1rem;
+
+  // box-shadow: 0 0 0 20px $main-background, 0 0 0 30px $landing-page-background;
+}
+
+.welcome-header {
+  color: $font-color;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 15ch;
+  span {
+    text-transform: uppercase;
+  }
+  span:nth-of-type(1) {
+    animation: $fade-in-animation, $translate-in-right-animation;
+  }
+  span:nth-of-type(2) {
+    animation: $fade-in-animation, $translate-in-left-animation;
+    text-align: end;
+    align-self: flex-end;
+  }
+}
+@keyframes underline {
+  0% {
+    transform: translateX(-100%);
+    // background-size: 100% 0.1em, 0 0.1em;
+  }
+  100% {
+    transform: translateX(0%);
+    // background-size: 0 0.1em, 100% 0.1em;
+  }
+}
+@keyframes underline-reverse {
+  0% {
+    transform: translateX(100%);
+    // background-size: 100% 0.1em, 0 0.1em;
+  }
+  100% {
+    transform: translateX(0%);
+    // background-size: 0 0.1em, 100% 0.1em;
+  }
+}
+@keyframes translate-in-right {
+  0% {
+    transform: translateX($tranlate-in-value);
+  }
+  100% {
+    transform: translateX(0%);
+    // background-size: 0 0.1em, 100% 0.1em;
+  }
+}
+@keyframes translate-in-left {
+  0% {
+    transform: translateX(-$tranlate-in-value);
+  }
+  100% {
+    transform: translateX(0%);
+    // background-size: 0 0.1em, 100% 0.1em;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.underline {
+  height: $underline-thickness;
+  width: 100%;
+  margin: $underline-spacing 0;
+  background-color: $font-color;
+}
+
+.underline:not(.reverse) {
+  animation: underline-animate(underline);
+}
+.underline.reverse {
+  animation: underline-animate(underline-reverse);
 }
