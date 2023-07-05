@@ -1,0 +1,258 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:color";
+
+@import "./button_flip.scss";
+
+$radius: 25; //Hex-radius
+$width: 54px;
+$halfWidth: math.div($width, 2);
+$accentColor: #77f6fd;
+$accentColorWithBlur: opacify($accentColor, 0.161);
+$backgroundColor: rgb(30, 28, 41, 1);
+$backgroundColorWithBlur: color.scale($backgroundColor, $alpha: -25%);
+$backgroundHexCount: 100;
+$breakpoints: (
+  phone: 640px,
+  tablet: 768px,
+  desktop: 1024px,
+) !default;
+$spacing: (
+  mini: 0.5rem,
+  small: 1rem,
+  medium: 2rem,
+  large: 3rem,
+  xlarge: 5rem,
+);
+$pagePadding: 0 map.get($spacing, xlarge);
+:export {
+  radius: $radius;
+  backgroundHexCount: $backgroundHexCount;
+}
+
+$h2gridRow: 4;
+$pGridRow: $h2gridRow + 1;
+$pGridRowEnd: $pGridRow + 1;
+$opacity: 0.776;
+$cardWidth: 1200px;
+$cardHeight: 400px;
+$imgWidth: math.div($cardWidth, 2);
+$cardBorderRadius: 0px;
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project_card_container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.project_card_container,
+.project_card .skills_list {
+  list-style-type: none;
+}
+.project_card {
+  height: 100%;
+  min-width: 200px;
+  max-width: 32rem;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  margin-bottom: map.get($spacing, medium);
+  position: relative;
+  @media (min-width: map.get($breakpoints, tablet)) {
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    max-width: $cardWidth;
+    margin: auto;
+    background: none;
+    border: none;
+    width: 100%;
+    height: $cardHeight;
+    margin-bottom: map.get($spacing, xlarge);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &:hover .triangle.left {
+    clip-path: polygon(0 0, 0 100%, 0 100%);
+  }
+  &:hover .triangle.right {
+    clip-path: polygon(101% 0, 100% 0, 110% 100%);
+  }
+  .project_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid $accentColorWithBlur;
+    width: 100%;
+
+    height: 100%;
+    flex-direction: column;
+    z-index: 4;
+    background: color.scale($backgroundColor, $alpha: -50%);
+    border-radius: $cardBorderRadius;
+    @media (min-width: map.get($breakpoints, tablet)) {
+      grid-row: 1/1;
+      background: none;
+      border: none;
+    }
+    p {
+      min-height: 8rem;
+      grid-row: #{$pGridRow} / #{$pGridRowEnd};
+      margin: 0;
+      padding: map.get($spacing, small);
+      background: $backgroundColorWithBlur;
+      border-radius: $cardBorderRadius;
+    }
+  }
+
+  .skills_list .skills_icon {
+    color: $accentColor;
+    font-size: 30px;
+  }
+  .skills_list {
+    grid-row: #{$pGridRowEnd};
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 30ch;
+    width: 100%;
+    margin: map.get($spacing, small);
+    padding: 0;
+    background: none;
+    @media (min-width: map.get($breakpoints, tablet)) {
+      padding: 0 map.get($spacing, small);
+      background: $backgroundColorWithBlur;
+    }
+  }
+
+  h2 {
+    grid-column: 1;
+    padding: 0 map.get($spacing, small);
+    grid-row: $h2gridRow;
+    font-size: 2rem;
+    color: $accentColor;
+    text-decoration: underline;
+    text-align: center;
+    white-space: normal;
+    background: none;
+    margin-bottom: map.get($spacing, small);
+    @media (min-width: map.get($breakpoints, tablet)) {
+      background: $backgroundColorWithBlur;
+      white-space: nowrap;
+      margin-bottom: 0;
+    }
+  }
+}
+.project_card:nth-child(odd) {
+  & > .project_content {
+    align-items: center;
+    grid-column: 3/-1;
+
+    justify-self: end;
+  }
+  & > .image_link_container {
+    grid-column: 1/-1;
+
+    justify-self: start;
+
+    align-items: flex-start;
+  }
+  @media (min-width: map.get($breakpoints, tablet)) {
+    & > .project_content {
+      align-items: flex-end;
+    }
+  }
+}
+
+.project_card:nth-child(even) {
+  & > .project_content {
+    grid-column: 1/10;
+    align-items: center;
+    justify-self: start;
+  }
+  & > .image_link_container {
+    grid-column: 1/-1;
+    justify-self: end;
+    align-items: flex-end;
+  }
+
+  @media (min-width: map.get($breakpoints, tablet)) {
+    & > .project_content {
+      align-items: flex-start;
+    }
+  }
+}
+.image_link_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  border-radius: $cardBorderRadius;
+  background: none;
+  overflow: hidden;
+  .projects_btn {
+    display: none;
+  }
+  @media (min-width: map.get($breakpoints, tablet)) {
+    width: $imgWidth;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .projects_btn {
+      display: block;
+    }
+  }
+}
+.projects_btn {
+  pointer-events: all;
+  margin: map.get($spacing, small);
+  width: 7rem;
+}
+
+.triangle {
+  position: absolute;
+  z-index: 1;
+  filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  background-repeat: no-repeat;
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  pointer-events: none;
+
+  &.left {
+    clip-path: polygon(0 0, 0% 100%, 110% 100%);
+  }
+
+  &.right {
+    clip-path: polygon(100% 0, 0 0, 100% 110%);
+  }
+}
+
+.small_screen_btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media (min-width: map.get($breakpoints, tablet)) {
+    display: none;
+  }
+}
+.coming-soon-a {
+  width: fit-content;
+}
