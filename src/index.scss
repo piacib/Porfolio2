@@ -33,7 +33,10 @@ body,
   background: $main-background;
   color: $font-color;
 }
-
+body {
+  display: grid;
+  place-items: center;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
