@@ -1,4 +1,5 @@
 import AboutMeBlurb from "../AboutMeBlurb";
+import CenterCircle from "../CenterCircle/CenterCircle";
 import ProjectsContainer from "../ProjectsContainer";
 import "./style.scss";
 const LandingPage = () => {
@@ -7,9 +8,7 @@ const LandingPage = () => {
       <div className="landing-page__left flex-col">
         <WelcomeText />
         <AboutMeBlurb />
-        <Skills />
       </div>
-      <CenterCircle />
       <div className="landing-page__right grid-center">
         <ProjectsContainer />
       </div>
@@ -39,7 +38,5 @@ const UnderlineText = ({ children, reverse = false }: Props) => (
 const Skills = () => {
   return <></>;
 };
-const CenterCircle = () => {
-  return <></>;
-};
+
 export default LandingPage;
