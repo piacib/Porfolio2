@@ -2,7 +2,7 @@ import portfolio from "../../assets/portfolio.png";
 import pokeinfo from "../../assets/pokeinfo.png";
 import pokeinfo_extension from "../../assets/pokeinfo_extension.png";
 import redditTimerApp from "../../assets/reddit_timer_app.png";
-export interface ProjectContent {
+interface ProjectContentInitial {
   title: string;
   text: string;
   imgLink: string;
@@ -10,7 +10,23 @@ export interface ProjectContent {
   repoHref: string;
   skillsClassNames: string[];
 }
-export const projects: ProjectContent[] = [
+export interface ProjectContent {
+  title: string;
+  text: string;
+  imgLink: string;
+  demoHref: string;
+  containerId: () => string;
+  id: () => string;
+  repoHref: string;
+  skillsClassNames: string[];
+}
+function getContainerId(this: ProjectContentInitial) {
+  return `${this.title.split(" ").join("_").toLowerCase()}_container`;
+}
+function getId(this: ProjectContentInitial) {
+  return `${this.title.split(" ").join("_").toLowerCase()}`;
+}
+const projectsInfo: ProjectContentInitial[] = [
   {
     title: "Pokeinfo",
     imgLink: pokeinfo,
@@ -29,6 +45,7 @@ export const projects: ProjectContent[] = [
   {
     title: "Pokeinfo Extension",
     imgLink: pokeinfo_extension,
+
     repoHref: "https://github.com/piacib/pokeinfo_iframe_extension",
     demoHref:
       "https://chrome.google.com/webstore/detail/pokeinfo-showdown/bkfbliefifmflhjcggbgfimmodpiclgk?hl=en",
@@ -64,6 +81,7 @@ export const projects: ProjectContent[] = [
   {
     title: "Reddit Post Timer",
     imgLink: redditTimerApp,
+
     repoHref: "https://github.com/piacib/reddit-timer-piacib",
     demoHref: "https://piacib.github.io/reddit-timer-piacib/",
     text: `A website that utilizes the Reddit API to retrieve top posts from a
@@ -79,6 +97,7 @@ export const projects: ProjectContent[] = [
   },
   {
     title: "Portfolio",
+
     imgLink: portfolio,
     repoHref: "https://github.com/piacib/portfolio",
     demoHref: "https://piacib.github.io/portfolio/",
@@ -98,3 +117,14 @@ export const projects: ProjectContent[] = [
     ],
   },
 ];
+const projects: ProjectContent[] = [];
+projectsInfo.forEach((proj) => {
+  const boundGetContainerId = getContainerId.bind(proj);
+  const boundGetId = getId.bind(proj);
+  projects.push({
+    ...proj,
+    containerId: boundGetContainerId,
+    id: boundGetId,
+  });
+});
+export default projects;
