@@ -7,7 +7,9 @@ const ProjectsContainer = () => {
     <div
       onScroll={() => {
         // must be last element on page otherwise could scroll past
-        window.scrollTo(0, document.body.scrollHeight);
+        if (document.body.clientWidth <= 1024) {
+          window.scrollTo(0, document.body.scrollHeight);
+        }
       }}
       className="projects__container y mandatory-scroll-snapping normal-stop"
     >
@@ -15,7 +17,7 @@ const ProjectsContainer = () => {
         <img
           src={headshot}
           alt="headshot"
-          className="profile-image profile-image__large inset-shadow"
+          className="profile-image profile-image__large box-shadow-subtle"
         />
         <a
           className="button-flip"
