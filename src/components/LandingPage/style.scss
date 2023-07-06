@@ -5,18 +5,25 @@ $underline-thickness: 4px;
 $underline-spacing: 0.5rem;
 .landing-page__left {
   justify-content: space-between;
+  height: 90vh;
+  margin-bottom: 2rem;
 }
-.landing-page__right {
-}
+
 .landing-page__container {
-  margin: 3rem 2rem;
   background-color: $landing-page-background;
   position: relative;
   animation: $fade-in-animation;
   padding: 1rem;
-  @media (min-width: map.get($breakpoints,"desktop")) {
+}
+@media (min-width: map.get($breakpoints,"desktop")) {
+  .landing-page__container {
+    margin: 3rem 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+  .landing-page__left {
+    margin-bottom: 0;
+    height: auto;
   }
 }
 
