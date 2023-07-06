@@ -1,12 +1,11 @@
 @import "../../globalStyles.module.scss";
 
 .circle {
+  aspect-ratio: 1;
   border-radius: 50%;
 }
 .profile-image {
   width: 5rem;
-  aspect-ratio: 1;
-  object-fit: cover;
   animation: $translate-in-right-animation;
   filter: grayscale(100%);
 }
