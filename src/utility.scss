@@ -1,40 +1,7 @@
-@import "./globalStyles.module.scss";
 .flex-col {
   display: flex;
   flex-direction: column;
 }
 .flex-row {
   display: flex;
-}
-.flex-row--space-around {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.grid-center {
-  display: grid;
-  place-items: center;
-}
-.y.mandatory-scroll-snapping {
-  scroll-snap-type: y mandatory;
-}
-.normal-stop > * {
-  scroll-snap-align: center;
-  scroll-snap-stop: normal;
-}
-.margin-bottom--sm {
-  margin-bottom: $sm;
-}
-.margin-top--sm {
-  margin-top: $sm;
-}
-.greyscale {
-  filter: grayscale(1);
-}
-$box-shadow-value: 0px 1px 20px -9px rgba(0, 0, 0, 0.75);
-.box-shadow-subtle {
-  box-shadow: $box-shadow-value;
-  -webkit-box-shadow: $box-shadow-value;
-  -moz-box-shadow: $box-shadow-value;
 }

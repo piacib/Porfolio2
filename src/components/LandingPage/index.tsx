@@ -1,5 +1,4 @@
 import AboutMeBlurb from "../AboutMeBlurb";
-import ProjectsContainer from "../ProjectsContainer";
 import "./style.scss";
 const LandingPage = () => {
   return (
@@ -10,9 +9,7 @@ const LandingPage = () => {
         <Skills />
       </div>
       <CenterCircle />
-      <div className="landing-page__right grid-center">
-        <ProjectsContainer />
-      </div>
+      <div className="landing-right"></div>
     </section>
   );
 };
