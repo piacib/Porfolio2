@@ -18,11 +18,9 @@
 }
 .projects-initial-page__container {
   position: relative;
-  height: inherit;
   width: 100%;
   justify-content: space-around;
-  // height: 100%;
-  // height: 80vh;
+  height: 100%;
   margin-bottom: 2rem;
   background-color: lightgray;
   align-items: center;
@@ -31,7 +29,6 @@ $size: 75%;
 .inner-square {
   margin-top: 5rem;
   margin-bottom: auto;
-  //   height: $size;
   max-width: 400px;
   width: $size;
   aspect-ratio: 7 / 8;
@@ -59,8 +56,8 @@ $size: 75%;
 .profile-image__large {
   width: 100%;
   max-width: 400px;
-  // height: 100%;
 }
+
 .current-project-button {
   display: block;
   max-width: 30rem;
