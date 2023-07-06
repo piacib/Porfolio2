@@ -1,3 +1,4 @@
+@import "./globalStyles.module.scss";
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -5,7 +6,29 @@
 .flex-row {
   display: flex;
 }
+.flex-row--space-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .grid-center {
   display: grid;
   place-items: center;
+}
+.y.mandatory-scroll-snapping {
+  scroll-snap-type: y mandatory;
+}
+.normal-stop > * {
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
+}
+.margin-bottom--sm {
+  margin-bottom: $sm;
+}
+.margin-top--sm {
+  margin-top: $sm;
+}
+.greyscale {
+  filter: grayscale(1);
 }
