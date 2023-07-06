@@ -1,8 +1,9 @@
 @import "../../globalStyles.module.scss";
 .projects__container {
   width: 100%;
-  height: 80vh;
-  min-height: $min-project-container-height;
+
+  height: clamp($min-project-container-height, 80vh, 1024px);
+
   padding: 0 1rem;
   box-sizing: border-box;
   overflow-y: scroll;
@@ -34,7 +35,6 @@ $size: 75%;
   aspect-ratio: 7 / 8;
   background-color: grey;
 }
-
 
 .testContainer {
   height: 100%;

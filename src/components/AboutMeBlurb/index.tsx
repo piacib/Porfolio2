@@ -2,12 +2,14 @@ import "./styles.scss";
 import headshot from "../../assets/headshot.jpg";
 const AboutMeBlurb = () => {
   return (
+<>
+    <Skills />
     <div className="about-me-blurb__container">
-      <img
+      {/* <img
         src={headshot}
         alt="Personal Headshot"
         className="circle profile-image"
-      />
+      /> */}
       <p className="about-me-blurb">
         I am an aspiring front end web developer currently searching for a job.
         My passion for web development started a couple years back and I have
@@ -17,8 +19,8 @@ const AboutMeBlurb = () => {
         development! I graduated for the University of Washington in 2019 with a
         degree in Physics and Astronomy.
       </p>
-      <Skills />
     </div>
+      </>
   );
 };
 const icons = [
@@ -34,7 +36,7 @@ const icons = [
 ];
 const Skills = () => (
   <>
-    <ul className="skills-list flex-row">
+    <ul className="skills-list flex-col">
       {icons.map((icon, idx) => (
         <li>
           <i key={icon + idx} className={`skills_icon ${icon}`}></i>
