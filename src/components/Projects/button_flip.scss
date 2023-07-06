@@ -26,6 +26,7 @@ $speed: 0.5s;
       opacity: 0;
       transform: translateY(50%) rotateX(90deg);
     }
+    color: transparent;
   }
 
   &:after {
@@ -35,7 +36,7 @@ $speed: 0.5s;
     line-height: 40px;
     width: 100%;
     display: block;
-    background: $main-background;
+    background: $font-color;
     color: $accentColor;
     transition: $speed;
     position: absolute;
@@ -47,8 +48,8 @@ $speed: 0.5s;
     top: 0;
     left: 0;
     opacity: 1;
-    color: $main-background;
-    background: $accentColor;
+    color: $font-color;
+    background: $main-background;
     line-height: 40px;
 
     display: block;
