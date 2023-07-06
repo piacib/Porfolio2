@@ -1,7 +1,6 @@
 import Projects from "../Projects/Projects";
 import "./projects-container.scss";
 import headshot from "../../assets/headshot.png";
-
 const ProjectsContainer = () => {
   return (
     <div
