@@ -32,3 +32,9 @@
 .greyscale {
   filter: grayscale(1);
 }
+$box-shadow-value: 0px 1px 20px -9px rgba(0, 0, 0, 0.75);
+.box-shadow-subtle {
+  box-shadow: $box-shadow-value;
+  -webkit-box-shadow: $box-shadow-value;
+  -moz-box-shadow: $box-shadow-value;
+}
