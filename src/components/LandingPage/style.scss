@@ -32,9 +32,11 @@ $underline-spacing: 0.5rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  width: 15ch;
+  width: 20ch;
+  font-size: 1.5rem;
   span {
     text-transform: uppercase;
+    white-space: nowrap;
   }
   span:nth-of-type(1) {
     animation: $fade-in-animation, $translate-in-right-animation;
@@ -43,6 +45,16 @@ $underline-spacing: 0.5rem;
     animation: $fade-in-animation, $translate-in-left-animation;
     text-align: end;
     align-self: flex-end;
+  }
+}
+@media (min-width: map.get($breakpoints,"phoneM")) {
+  .welcome-header {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: map.get($breakpoints,"phone")) {
+  .welcome-header {
+    font-size: 3rem;
   }
 }
 @keyframes underline {
