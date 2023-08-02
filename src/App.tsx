@@ -16,7 +16,7 @@ function App() {
         <div className="sidebar-line"></div>
       </div>
       <main className=" content__container">
-        <div className="info-container flex-col">
+        <div className="info__container flex-col">
           <WelcomeText />
           <AboutMeBlurb />
         </div>
