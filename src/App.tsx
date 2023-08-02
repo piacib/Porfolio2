@@ -1,7 +1,4 @@
 import "./App.scss";
-import "./normalize.css";
-import "./components/LandingPage/style.scss";
-import "./sidebar.scss";
 import AboutMeBlurb from "./components/AboutMeBlurb";
 import ProjectsContainer from "./components/ProjectsContainer";
 function App() {
@@ -18,15 +15,15 @@ function App() {
         />
         <div className="sidebar-line"></div>
       </div>
-      <section className="landing-page__container">
-        <div className="landing-page__left flex-col">
+      <main className=" content__container">
+        <div className="info-container flex-col">
           <WelcomeText />
           <AboutMeBlurb />
         </div>
-        <div className="landing-page__right grid-center">
+        <div className="grid-center">
           <ProjectsContainer />
         </div>
-      </section>
+      </main>
       <div className="sidebar flex-col flex-justify-end sticky-top">
         <a href="mailto:ben.piacitelli@gmail.com" className="email">
           ben.piacitelli@gmail.com
