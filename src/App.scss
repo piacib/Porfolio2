@@ -1,7 +1,19 @@
+@use "sass:map";
 @import "./globalStyles.module.scss";
-
+@import "./normalize.css";
+@import "./welcome-header.scss";
+@import "./sidebar.scss";
 
 .page__container {
   display: grid;
   grid-template-columns: $sidebar-width auto $sidebar-width;
+}
+.content__container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: map.get($breakpoints,"desktop")) {
+  .content__container {
+    flex-direction: row;
+  }
 }
