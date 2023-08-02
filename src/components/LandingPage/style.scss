@@ -11,7 +11,6 @@ $underline-spacing: 0.5rem;
 }
 
 .landing-page__container {
-  background-color: $landing-page-background;
   position: relative;
   animation: $fade-in-animation;
   padding: 1rem;
@@ -28,6 +27,7 @@ $underline-spacing: 0.5rem;
     height: auto;
   }
 }
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Trirong:wght@500&display=swap");
 
 .welcome-header {
   color: $font-color;
@@ -37,6 +37,7 @@ $underline-spacing: 0.5rem;
   width: 20ch;
   font-size: 1.5rem;
   span {
+    font-family: "Playfair Display", serif;
     text-transform: uppercase;
     white-space: nowrap;
   }
@@ -56,7 +57,7 @@ $underline-spacing: 0.5rem;
 }
 @media (min-width: map.get($breakpoints,"phone")) {
   .welcome-header {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 @keyframes underline {
