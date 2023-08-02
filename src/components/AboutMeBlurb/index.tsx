@@ -6,7 +6,7 @@ const AboutMeBlurb = () => {
     <>
       <div className="skills-connect__container flex-row">
         <Skills />
-        <CenterCircle />
+        {/* <CenterCircle /> */}
         <div></div>
       </div>
       <div className="about-me-blurb__container">
