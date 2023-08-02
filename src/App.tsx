@@ -44,36 +44,10 @@ interface LinkProps {
 }
 const Link = ({ iClassName, href }: LinkProps) => (
   <a href={href} className="sidebar-link">
-    <i className={iClassName + " " + ""}></i>
+    <i className={iClassName}></i>
   </a>
 );
-const Blob = () => (
-  <svg
-    className="blob-svg"
-    viewBox="0 0 100 100"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <linearGradient
-        id="fill"
-        x1="0%"
-        y1="0%"
-        x2="100%"
-        y2="0%"
-        gradientTransform="rotate(296 0.5 0.5)"
-      >
-        <stop offset="0%" stop-color="#4F46E5"></stop>
-        <stop offset="100%" stop-color="#7b8cff"></stop>
-      </linearGradient>
-    </defs>
-    <path
-      d="M82.5,69.5Q72,89,53,83Q34,77,25,63.5Q16,50,21,29.5Q26,9,46.5,14.5Q67,20,80,35Q93,50,82.5,69.5Z"
-      stroke="none"
-      stroke-width="0"
-      fill="url(#fill)"
-    ></path>
-  </svg>
-);
+
 const WelcomeText = () => {
   return (
     <h1 className="welcome-header">
