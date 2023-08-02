@@ -1,0 +1,35 @@
+@import "./globalStyles.module.scss";
+
+.sidebar {
+  align-self: flex-start;
+  align-items: center;
+  width: $sidebar-width;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.sidebar-line {
+  height: $sidebar-line-height;
+  margin-top: $sidebar-line-content-spacing;
+  width: $sidebar-line-width;
+  background: $sidebar-line-color;
+}
+.link {
+  rotate: -90deg;
+}
+.email {
+  white-space: nowrap;
+  text-align: center;
+  font-size: clamp(10px, 1.2rem, 20px);
+  color: $font-color;
+  padding-left: $sidebar-line-width;
+  writing-mode: vertical-rl;
+}
+.line-container {
+  flex-grow: 2;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-link {
+  font-size: $sidebar-line-size;
+  color: black;
+}
