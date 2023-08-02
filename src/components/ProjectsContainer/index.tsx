@@ -1,7 +1,6 @@
 import Projects from "../Projects/Projects";
 import "./projects-container.scss";
 import headshot from "../../assets/headshot.png";
-
 const ProjectsContainer = () => {
   return (
     <div
@@ -11,7 +10,7 @@ const ProjectsContainer = () => {
           window.scrollTo(0, document.body.scrollHeight);
         }
       }}
-      className="projects__container y mandatory-scroll-snapping normal-stop"
+      className="projects__container glass-morphism y mandatory-scroll-snapping normal-stop"
     >
       <div className="projects-initial-page__container flex-col">
         <img

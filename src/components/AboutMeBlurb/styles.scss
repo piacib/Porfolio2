@@ -15,12 +15,16 @@
 
 .about-me-blurb {
   animation: $translate-in-left-animation;
+  font-size: clamp(10px, 1.2rem, 20px);
 }
 .skills-list {
   list-style: none;
   margin: 0;
   padding: 0;
-
   animation: $translate-in-right-animation;
+  justify-content: space-between;
+}
+.skills-connect__container {
+  align-items: center;
   justify-content: space-between;
 }

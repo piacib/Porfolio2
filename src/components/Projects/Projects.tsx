@@ -5,7 +5,9 @@ const Projects = () => {
   return (
     <>
       {projects.map((x, idx) => (
-        <ProjectCard key={x.title + idx} data={x} id={x.id()} />
+        <div id={x.id()}>
+          <ProjectCard key={x.title + idx} data={x} />
+        </div>
       ))}
 
       <a
@@ -19,6 +21,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-
-
