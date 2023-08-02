@@ -11,7 +11,10 @@
   justify-content: space-around;
   align-items: center;
 }
-
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
 .grid-center {
   display: grid;
   place-items: center;
@@ -40,4 +43,12 @@ $box-shadow-value: 0px 1px 20px -9px rgba(0, 0, 0, 0.75);
 }
 .circle {
   border-radius: 100%;
+}
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
