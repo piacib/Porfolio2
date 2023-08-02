@@ -2,7 +2,6 @@ $main-background: white;
 $landing-page-background: white;
 $font-color: black;
 $accentColor: #77f6fd;
-$landing-page__side_panel: grey;
 $background-gradient: radial-gradient(
     at 94% 34%,
     hsla(207, 94%, 52%, 1) 0,
@@ -44,3 +43,6 @@ $sidebar-line-color: black;
 $sidebar-line-size: 1.5rem;
 $sidebar-width: 100px;
 $sidebar-line-content-spacing: 1rem;
+// welcome header
+$underline-thickness: 4px;
+$underline-spacing: 0.5rem;
