@@ -12,8 +12,11 @@
   display: flex;
   flex-direction: column;
 }
-@media (min-width: map.get($breakpoints,"desktop")) {
+@media (min-width: map.get($breakpoints,"desktopL")) {
   .content__container {
     flex-direction: row;
   }
+}
+.info__container {
+  margin-right: 1rem;
 }
