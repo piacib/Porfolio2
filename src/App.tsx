@@ -2,7 +2,6 @@ import "./App.scss";
 import "./normalize.css";
 import "./components/LandingPage/style.scss";
 import "./sidebar.scss";
-import LandingPage from "./components/LandingPage";
 import AboutMeBlurb from "./components/AboutMeBlurb";
 import ProjectsContainer from "./components/ProjectsContainer";
 function App() {
