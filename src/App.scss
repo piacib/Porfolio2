@@ -1,25 +1,5 @@
 @import "./globalStyles.module.scss";
-#root {
-  display: grid;
-  place-items: center;
-  max-width: 1440px;
-  position: relative;
-  display: flex;
-}
-.blob-svg {
-  position: absolute;
-  // scale: 0.2;
-  left: 0;
-  top: 0;
-  height: 300px;
-  width: 300px;
 
-  filter: opacity(0.5) blur(8px);
-}
-.links {
-  align-items: center;
-  padding: 1rem 0;
-}
 
 .page__container {
   display: grid;
