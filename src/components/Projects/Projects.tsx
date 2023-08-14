@@ -5,9 +5,9 @@ const Projects = () => {
   return (
     <>
       {projects.map((x, idx) => (
-        <div id={x.id()}>
-          <ProjectCard key={x.title + idx} data={x} />
-        </div>
+        <>
+          <ProjectCard id={x.id()} key={x.title + idx} data={x} />
+        </>
       ))}
 
       <a
